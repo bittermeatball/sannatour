@@ -26,7 +26,12 @@ if ( ! function_exists( 'wordpress_setup' ) ) :
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-
+		// Add more format for posts
+		add_theme_support( 'post-formats', array(
+			'blog',
+			'news',
+			'places'
+		));
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -79,9 +84,40 @@ if ( ! function_exists( 'wordpress_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'wordpress_setup' );
+
+if ( ! function_exists( 'create_custom_posts' ) ) :
+function create_custom_posts() {
+
+	register_post_type( 'tour',
+	  array(
+		'labels' => array(
+		  'name' => __( 'Tours' ),
+		  'singular_name' => __( 'Tour' )
+		),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'tour'),
+	  )
+	);
+
+	register_post_type( 'service',
+	  array(
+		'labels' => array(
+		  'name' => __( 'Services' ),
+		  'singular_name' => __( 'Service' )
+		),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'service'),
+	  )
+	);
+}
+endif;
+add_action( 'init', 'create_custom_posts' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

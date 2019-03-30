@@ -530,25 +530,218 @@
 		</div>
 	</div>
 
-	<!-- TOURS (HOT) -->
-	<div class="top-preview row no-margin">
-		<!-- 4 or 8 to look good ! -->
-		<?php
-			if ( have_posts() ) {
-				// Load posts loop.
-				$i = 1;
-				while ( have_posts() ) {
-					$i++;
-					the_post();
-					get_template_part( 'template-parts/body/content','tours-hot' );
-					if ($i > 8) break;
-				}
-			} else {
-				// If no content, include the "No posts found" template.
-				get_template_part( 'template-parts/content', 'none' );
-			}
-		?>
-	</div>
+	<div class="main-wraper padd-70-70">
+	<div class="container">
+	    <div class="filter style-2">
+	        <ul class="filter-nav">
+	            <li class="selected"><a href="#all" data-filter="*">all</a></li>
+	            <li><a href="#tours" data-filter=".tours">tours</a></li>
+	            <li><a href="#cruises" data-filter=".cruises">cruises</a></li>
+	            <li><a href="#flights" data-filter=".flights">flights</a></li>
+	            <li><a href="#hotels" data-filter=".hotels">hotels</a></li>
+	        </ul>
+	    </div>
+		<div class="filter-content row">
+			<div class="grid-sizer col-mob-12 col-xs-6 col-sm-2"></div>
+			<div class="item hotels gal-item style-3 col-mob-12 col-xs-6 col-sm-4">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_1.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>monaco, monte carlo</b></h4>					
+						<h5>sea tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item hotels gal-item style-3 col-mob-12 col-xs-6 col-sm-4">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_2.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>paris, france</b></h4>					
+						<h5>mountain tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item hotels gal-item style-3 col-mob-12 col-xs-6 col-sm-4">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_3.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>santorini, Greece</b></h4>					
+						<h5>sea tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item flights gal-item style-3 gal-big col-mob-12 col-xs-6 col-sm-6">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_4.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>rome, italy</b></h4>					
+						<h5>honeymoon tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item flights gal-item style-3 gal-big col-mob-12 col-xs-6 col-sm-6">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_5.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>monte carlo</b></h4>					
+						<h5>mountain tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item cruises gal-item style-3 col-mob-12 col-xs-6 col-sm-4">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_6.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>andora</b></h4>					
+						<h5>mountain tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item cruises gal-item style-3 col-mob-12 col-xs-6 col-sm-4">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_7.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>monaco, paris</b></h4>					
+						<h5>mountain tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item cruises gal-item style-3 col-mob-12 col-xs-6 col-sm-4">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_8.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>venice, italy</b></h4>					
+						<h5>sea tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item tours gal-item style-3 gal-big col-mob-12 col-xs-6 col-sm-6">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_9.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>monte carlo</b></h4>					
+						<h5>honeymoon tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item tours gal-item style-3 gal-big col-mob-12 col-xs-6 col-sm-6">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_10.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>rome, italy</b></h4>					
+						<h5>sea tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item tours gal-item style-3 col-mob-12 col-xs-6 col-sm-4">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_11.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>santorini, Greece</b></h4>					
+						<h5>sea tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item tours gal-item style-3 col-mob-12 col-xs-6 col-sm-4">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_12.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>monaco, monte carlo</b></h4>					
+						<h5>honeymoon tours</h5>
+					</div>
+				</a>
+			</div>
+			<div class="item tours gal-item style-3 col-mob-12 col-xs-6 col-sm-4">
+				<a class="black-hover" href="gallery_detail.html">
+					<div class="gal-item-icon">
+						<img class="img-full img-responsive" src="img/gallery/m_gal_13.jpg" alt="">
+						<div class="tour-layer delay-1"></div>
+						<div class="vertical-align">
+							<span class="c-button small bg-white delay-2"><span>view more</span></span>
+						</div>
+					</div>
+					<div class="gal-item-desc delay-1">
+						<h4><b>paris, france</b></h4>					
+						<h5>mountain tours</h5>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>        		
+</div>
+
 
 	<!-- HOTEL-ITEM-->
 	<div class="main-wraper ">
