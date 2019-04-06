@@ -1,11 +1,16 @@
 <div class="f_news clearfix" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <a class="f_news-img black-hover" href="#">
-        <?php
-        if (wordpress_post_thumbnail() == NULL || wordpress_post_thumbnail() == '')
-            echo '<span style="font-style: italic">No image</span>';
-        else
-            wordpress_post_thumbnail(); 
-        ?>
+    <a class="f_news-img black-hover" href="<?php the_permalink() ?>">
+        <?php if ( has_post_thumbnail() ) : ?>
+            <?php the_post_thumbnail('full', [
+                'width' => '80',
+                'height' => 'auto',
+                'title' => 'Feature image'
+                ]); 
+            ?>
+        <?php else : ?>
+            <img width="80" height="auto" src="<?php echo get_template_directory_uri()?>/img/noimage.jpg" />
+        <?php endif; ?>
+
         <div class="tour-layer delay-1"></div>
     </a>
     <div class="f_news-content">

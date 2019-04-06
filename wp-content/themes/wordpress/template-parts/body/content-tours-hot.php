@@ -1,36 +1,33 @@
-<div class="col-mob-12 col-xs-6 col-sm-6 col-md-3 no-padding" style="overflow: hidden">
-    <div class="tp_entry style-2">
-        <div class="tp_image">
-            <?php
-				// if (wordpress_post_thumbnail() == NULL || wordpress_post_thumbnail() == '')
-					echo '<img class="center-image" src="http://localhost:8000/sannatour/wp-content/themes/wordpress/img/noimage.jpg" alt="">';
-				// else
-				// 	wordpress_post_thumbnail();
-			?>
-        </div>
-        <div class="tp_content">
-            <div class="rate-wrap clearfix">
+<div class="swiper-slide" data-val="<?php the_ID() ?>">
+    <div class="offers-block style-2 radius-mask underline-block hover-blue">
+        <a href="<?php the_permalink() ?>">
+            <div class="clip">
+                <div class="bg bg-bg-chrome act" style="background-image:url(<?php echo get_template_directory_uri() ?>/img/home_4/offers-block_1.jpg)">
+                </div>
+            </div>
+            <div class="tour-layer delay-1"></div>
+            <div class="vertical-top">
                 <div class="rate">
-                    <span class="fas fa-star color-yellow"></span>
-                    <span class="fas fa-star color-yellow"></span>
-                    <span class="fas fa-star color-yellow"></span>
-                    <span class="fas fa-star color-yellow"></span>
-                    <span class="fas fa-star color-yellow"></span>
+                    <span class="fa fa-heart color-dr-blue-2 hover-it"></span>
+                    <span class="fa fa-heart color-dr-blue-2 hover-it"></span>
+                    <span class="fa fa-heart color-dr-blue-2 hover-it"></span>
+                    <span class="fa fa-heart color-dr-blue-2 hover-it"></span>
+                    <span class="fa fa-heart color-dr-blue-2 hover-it"></span>
                 </div>
-                <i>485 rewies</i>
-                <div class="tp_price">$273</div>
+                <h3 class="hover-it"><?php the_title() ?></h3>
             </div>
-            <?php the_title( '<h4><b>', '</b></h4>' ); ?>
-            <div class="tour-info-line clearfix">
-                <div class="tour-info fl">
-                    <img src="http://localhost:8000/sannatour/wp-content/themes/wordpress/img/calendar_icon_grey.png" alt="">
-                    <span class="font-style-2 color-grey-3">July <strong>19th 2015</strong></span>
+            <div class="vertical-bottom">
+                <div class="tour-info">
+                    <img src="<?php echo get_template_directory_uri() ?>/img/calendar_icon.png" alt="">
+                    <span class="font-style-2">03/07/2015</span>
                 </div>
-                <div class="tour-info fl">
-                    <img src="http://localhost:8000/sannatour/wp-content/themes/wordpress/img/loc_icon_small_grey.png" alt="">
-                    <span class="font-style-2 color-grey-3">alaska</span>
-                </div>						
-            </div>
-        </div>
-    </div>	
+                <h4 class="offet-title underline hover-it m94">
+                    <?php
+                        the_destinations(get_the_ID(),'domestic_destinations')
+                    ?>
+                </h4>
+                <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
+            </div>        
+        </a>
+    </div> 
 </div>

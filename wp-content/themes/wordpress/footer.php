@@ -16,21 +16,24 @@
     			<div class="col-lg-3 col-md-3 col-sm-6 col-sm-6 no-padding">
 				   <div class="footer-block">
 						<h6>Travel News</h6>
-						<?php
-							if ( have_posts() ) {
-								// Load posts loop.
-								$i = 0;
-								while ( have_posts() ) {
-									$i++;
-									the_post();
-									get_template_part( 'template-parts/footer/content','blogs' );
-									if ($i > 3) break;
-								}
-							} else {
-								// If no content, include the "No posts found" template.
-								get_template_part( 'template-parts/content', 'none' );
-							}
-						?>
+							<?php
+								$posts = new WP_Query( array(
+										'post_type'   => 'post',
+									)
+								);
+								if( $posts->have_posts() ) :
+									$i = 0;
+									while( $posts->have_posts() ) :
+										$i++;
+										$posts->the_post();
+										get_template_part( 'template-parts/footer/content','blogs' );
+										if ($i == 3) break;
+									endwhile;
+									wp_reset_postdata();
+								else :
+									get_template_part( 'template-parts/content', 'none' ); 
+								endif;
+							?>
 				   </div>
 				</div>
     			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
